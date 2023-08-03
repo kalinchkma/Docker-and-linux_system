@@ -27,8 +27,7 @@
 
 #### Docker Command
 
-| Command | Description |
-| ------- | ----------- |
-
-| `docker build -t 'name' 'source-path'`|Build an docker image|
-|`docker image ls`|See the all docker images that have been created|
+| Command                                | Description                                      |
+| -------------------------------------- | ------------------------------------------------ |
+| `docker build -t 'name' 'source-path'` | Build an docker image                            |
+| `docker image ls`                      | See the all docker images that have been created |
