@@ -82,5 +82,38 @@
 | `less 'file path'`            | See the file content                                                                                |
 | `cat /etc/passwd`             | list all avaliable users                                                                            |
 | `cat /etc/group`              | list all avaliable group                                                                            |
-| `mount -o remount,rw`         | to retrieve forgotten password, remount file system, this command execute on recovery mode          |
-| `passwd username`             | change user password                                                                                |
+| `sudo useradd username`       | create new user                                                                                     |
+| `sudo adduser username`       | automatically create user default shell                                                             |
+| `sudo sh`                     | switch to root user shell                                                                           |
+
+**_How to retrieve forgoted user password_**
+
+| Command               | Description                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------ |
+| `mount -o remount,rw` | to retrieve forgotten password, remount file system, this command execute on recovery mode |
+| `passwd username`     | change user password                                                                       |
+
+**_Simple user setting_**
+
+`usermod` command used to modify user settings
+
+- `-d` - Changes the user's home directory
+- `-s` - Changes the user's default shell
+- `-e` - Sets an account expiry date
+- `-c` - Adds a comment to the user's entry
+- `-u` - Changes the user's UID
+- `-aG` - Add the user to supplementary groups without removeing existing group
+  memberships
+
+| Command                                 | Description                                             |
+| --------------------------------------- | ------------------------------------------------------- |
+| `sudo userdel username`                 | delete the user                                         |
+| `sudo userdel -r username`              | `-r` option user to delete user home dir and main spool |
+| `sudo groupadd group_name`              | create new user group                                   |
+| `getent group group_name`               | get group                                               |
+| `sudo adduser user_username group_name` | add user to group                                       |
+| `groups user_username`                  | check user groups                                       |
+| `sudo deluser user_usernem group_name`  | delete user from specific group                         |
+| `id user_username`                      | display all group members of user                       |
+| `id -nG username`                       | display user group member names                         |
+| `sudo usermod -aG group_name username`  | add user to new group without removing current group    |
