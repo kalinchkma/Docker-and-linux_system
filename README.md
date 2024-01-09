@@ -210,10 +210,45 @@
 
 **_User and Group Commands_**
 
-| Command              | Description                                       |
-| -------------------- | ------------------------------------------------- |
-| `id`                 | See details about the active users                |
-| `last`               | Show the last system logins                       |
-| `who`                | Display who is currently logged into the system   |
-| `w`                  | Show which users are logged in and their activity |
-| `finger [user_name]` | Show user information                             |
+| Command                                     | Description                                                   |
+| ------------------------------------------- | ------------------------------------------------------------- |
+| `id`                                        | See details about the active users                            |
+| `last`                                      | Show the last system logins                                   |
+| `who`                                       | Display who is currently logged into the system               |
+| `w`                                         | Show which users are logged in and their activity             |
+| `finger [user_name]`                        | Show user information                                         |
+| `sudo useradd [user_name]`                  | Create a new user account                                     |
+| `sudo adduser [user_name]`                  | Create a new user account                                     |
+| `sudo userdel [user_name]`                  | Delete user account                                           |
+| `sudo usermod -aG [group_name] [user_name]` | Modify user information or add user to group                  |
+| `passwd` or `sudo passwd [user_name]`       | Change the current user's password or another user's password |
+| `sudo groupadd [group_name]`                | add a new group                                               |
+| `sudo groupdel [group_name]`                | Delete a group                                                |
+| `sudo groupmod -n [new_name] [old_name]`    | Change or modify user group                                   |
+| `su - [user_name]`                          | Switch the user account or become a superuser                 |
+| `chgrp [group_name] [file/directory]`       | Change file or directory group                                |
+
+**_Package Installation Commands_**
+
+Debian
+
+| Command                               | Description                                    |
+| ------------------------------------- | ---------------------------------------------- |
+| `sudo apt-get install [package_name]` | Install an APT package                         |
+| `sudo apt install [package_name]`     | Install an APT package using a newer APT       |
+| `apt search [keyword]`                | Search for a package in the APT repositories   |
+| `apt list`                            | List packages installed                        |
+| `apt show [package_name]`             | Show information about a package               |
+| `sudo dpkg -i [package_name.deb]`     | Install a .deb package with the Debian package |
+| `sudo dpkg -l`                        | List packages installed with dpkg              |
+
+Red Hat
+
+| Command                           | Description                                                          |
+| --------------------------------- | -------------------------------------------------------------------- |
+| `sudo yum install [package_name]` | Install a package using the YUM package manager                      |
+| `yum search [keyword]`            | Find a package in the YUM repositories based on the provided keyword |
+| `yum list installed`              | List all packages installed with YUM                                 |
+| `yum info [package_name]`         | Show package information for a package                               |
+| `sudo dnf install [package_name]` | Install a package using the DNF package manager                      |
+| `sudo rpm -i [package_name.rpm]`  | Install a .rpm package from a local file                             |
