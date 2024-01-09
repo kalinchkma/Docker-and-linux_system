@@ -252,3 +252,114 @@ Red Hat
 | `yum info [package_name]`         | Show package information for a package                               |
 | `sudo dnf install [package_name]` | Install a package using the DNF package manager                      |
 | `sudo rpm -i [package_name.rpm]`  | Install a .rpm package from a local file                             |
+
+Universal Linux Packages
+
+| Command                                                                                       | Description                                      |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| `sudo yum install [package_name]`                                                             | Install a package using the YUM package manager  |
+| `tar zxvf [file_name.tar.gz]`, `cd [extracted_directory]`, `./configure make`, `make install` | Install software from source code                |
+| `sudo snap install [package_name]`                                                            | Install a snap packages                          |
+| `sudo snap find [keyword]`                                                                    | Search for a package in the Snap store           |
+| `sudo snap list`                                                                              | List installed Snap packages                     |
+| `flatpak install [package_name]`                                                              | Install a Flatpak package                        |
+| `flatpak search [keyword]`                                                                    | Search for a Flatpak application in repositories |
+| `flatpak list`                                                                                | List installed Flatpack packages                 |
+
+**_Process Related Commands_**
+
+| Command                      | Description                                                                                         |
+| ---------------------------- | --------------------------------------------------------------------------------------------------- |
+| `ps`                         | List active processes                                                                               |
+| `pstree`                     | Show processes in a tree-like diagram                                                               |
+| `pmap`                       | Display a memory usage map of processes                                                             |
+| `top`                        | See all running processes                                                                           |
+| `htop`                       | Interactive and colorful process viewer                                                             |
+| `kill [process_id]`          | Terminate a Linux process under a given ID                                                          |
+| `pkill [process_name]`       | Terminate a process under a specific name                                                           |
+| `killall [label]`            | Terminate all processes with a given label                                                          |
+| `prgrep [keyword]`           | List processes based on the provided keyword                                                        |
+| `pidof [process_name]`       | Show the PID of a process                                                                           |
+| `bg`                         | List and resume stopped jobs in the background                                                      |
+| `fg`                         | Bring the most recently suspended job to the foreground                                             |
+| `fg [job]`                   | Bring a particular job to the foreground                                                            |
+| `lsof`                       | List files opened by running processes                                                              |
+| `trap "[commands]" [signal]` | Catch a system error signal in a shell script. Executes provided commands when the signal is caught |
+| `wait`                       | Pause the terminal or a Bash script until a running process is completed                            |
+
+**_System Management and Information Commands_**
+
+| Command                  | Description                                       |
+| ------------------------ | ------------------------------------------------- |
+| `uname -r`               | Show system information                           |
+| `uname -a`               | See kernel release information                    |
+| `uptime`                 | Display system uptime, including the load average |
+| `hostname`               | View system hostname                              |
+| `hostname -i`            | Show the IP address of the system                 |
+| `last reboot`            | List system reboot history                        |
+| `date`                   | See current time and date                         |
+| `timedatectl`            | Query and change the system clock                 |
+| `cal`                    | show current calendar                             |
+| `w`                      | Last logged-in users                              |
+| `whoami`                 | see which user you are using                      |
+| `ulimit [flags] [limit]` | View or limit system resource amounts             |
+| `shutdown [hh:mm]`       | Schedule a system shutdown                        |
+| `shutdown now`           | Shut down the system immediately                  |
+| `modprobe [module_name]` | Add a new kernel module                           |
+| `dmesg`                  | Show bootup messages                              |
+
+**_Disk Usage Commands_**
+
+| Command                             | Description                                     |
+| ----------------------------------- | ----------------------------------------------- |
+| `df -h`                             | Check free and used space on mounted systems    |
+| `df -i`                             | Show free inodes on mounted file systems        |
+| `fdisk -l`                          | Display disk partitions, sizes, and types       |
+| `du -ah`                            | See disk usage for all files and directories    |
+| `du -sh`                            | Show disk usage of the current directory        |
+| `mount`                             | Show currently mounted file systems             |
+| `findmnt`                           | Display target mount point for all file systems |
+| `mount [device_path] [mount_point]` | Mount a device                                  |
+
+**_SSH Login Commands_**
+
+| Command                                                   | Description                                                              |
+| --------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `ssh [user_name]@[remote_host]`                           | Connect to a remote host as a user via SSH                               |
+| `ssh [host]`                                              | Securely connect to a host via SSH default port 22                       |
+| `ssh -p [port] [user_name]@[remote_host]`                 | Connect to the host using a particular port                              |
+| `ssh-keygen`                                              | Generate SSH key pairs                                                   |
+| `sudo service sshd start`                                 | Start SSH server daemon                                                  |
+| `scp [file_name] [user_name]@[remote_host]:[remote_path]` | Securely copy files between local and remote systems via SSH             |
+| `sftp [user_name]@[remote_host]`                          | Interactive file transfer over encrypted SSH session using SFTP protocol |
+| `telnet [host]`                                           | Connect to the host via Telnet default port 23                           |
+
+**_File Permission Commands_**
+
+- File permission differs according to three categories
+  - Owner (the user whow created the file/directory)
+  - Group (to which the owner belongs to)
+  - Others (all other users)
+- In linux there are two ways to define permission
+
+  - using symbols
+  - using the octal notation method
+
+- Permission
+  - r(ead) has the value of 4
+  - w(rite) has the value of 2
+  - (e)x(ecute) has the value of 1
+  - no permission(-) has the value of 0
+  - using symbolic
+    - `chmod u=rwx,g=rwx,o=rwx [file_name]`
+  - using octal mode
+    - `chmod 644 test.txt`
+
+| Command                                      | Description                                                                                                        |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `chmod [permission] [file_name]`             | Provide file permission                                                                                            |
+| `chmod 777 [file_name]`                      | Assign read, write, and execute file permission to everyone (rwxrwxrwx)                                            |
+| `chmod 755 [file_name]`                      | Give read, write, and execute permission to owner, and read and execute permission to group and others (rwxr-xr-x) |
+| `chmod 766 [file_name]`                      | Assign full permission to the owner, and read and write permission to the group and others (rwxrw-rw-)             |
+| `chown [user_name] [file_name]`              | Change the ownership of a file                                                                                     |
+| `chown [user_name]:[group_name] [file_name]` | Change the owner and group ownership of a file                                                                     |
