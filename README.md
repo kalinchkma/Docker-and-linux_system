@@ -365,16 +365,29 @@ Universal Linux Packages
 | Command                                             | Description                                                                                                        |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `chmod [permission] [file_name]`                    | Provide file permission                                                                                            |
-| `chmod -R [permission] [filename]`                  | recursievly change file permission                                                                                 |
+| `chmod -R [permission] [filename]`                  | Recursively change file permission                                                                                 |
 | `chmod 777 [file_name]`                             | Assign read, write, and execute file permission to everyone (rwxrwxrwx)                                            |
 | `chmod 755 [file_name]`                             | Give read, write, and execute permission to owner, and read and execute permission to group and others (rwxr-xr-x) |
 | `chmod 766 [file_name]`                             | Assign full permission to the owner, and read and write permission to the group and others (rwxrw-rw-)             |
 | `chown [user_name] [file_name]`                     | Change the ownership of a file                                                                                     |
 | `chown [user_name]:[group_name] [file_name]`        | Change the owner and group ownership of a file                                                                     |
 | `chgrp [OPTION] [GROUP_NAME] [DIRECTORY/FILE_NAME]` | Change group of file/directory                                                                                     |
-| `sudo chgrp -R [GROUP_NAME] [DIRECTORY_NAME]`       | Recursievly change group of directory                                                                              |
+| `sudo chgrp -R [GROUP_NAME] [DIRECTORY_NAME]`       | Recursively change group of directory                                                                              |
 
 **_Network Commands_**
 
-| Command | Description |
-| ------- | ----------- |
+| Command                       | Description                                    |
+| ----------------------------- | ---------------------------------------------- |
+| `ip addr show`                | List IP addresses and network interfaces       |
+| `ip address add [IP_address]` | Assign an IP address to interface eth0         |
+| `ifconfig`                    | Display IP addresses of all network interfaces |
+| `ping [remote_host]`          | Ping remote host                               |
+| `netstat -pnltu`              | See active (listening) ports                   |
+| `netstat -tuln`               | Show TCP and UDP ports and their programs      |
+| `whois [domain_name]`         | Display more information about a domain        |
+| `dig [domain_name]`           | Show DNS information about a domain            |
+| `dig -x [domain_name]`        | Do a reverse DNS lookup on the domain          |
+| `dig -x [IP_address]`         | Do a reverse DNS lookup of an IP address       |
+| `host [domain_name]`          | Perform an IP lookup for a domain              |
+| `hostname -I`                 | Show the local IP address                      |
+| `nslookup [domain_name]`      | Receive information about an internet domain   |
