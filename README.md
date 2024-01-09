@@ -354,12 +354,27 @@ Universal Linux Packages
     - `chmod u=rwx,g=rwx,o=rwx [file_name]`
   - using octal mode
     - `chmod 644 test.txt`
+- File permission with `find` commands
+  - `sudo find [directory] -type [d/f] -exec chmod [privilege] {} \`
+  - `-type d` for directorys`-type f` for files
+  - Ex: `find home -type f -exec chmod 000 {} \;`
+- Change Permission of Specific Files Recursively
+  - `find [directory] -name "*.[filename_extension]" -exec chmod [privilege] {} \;`
+  - Ex: `find . -name "*.py" -exec chmod +x {} \;`
 
-| Command                                      | Description                                                                                                        |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `chmod [permission] [file_name]`             | Provide file permission                                                                                            |
-| `chmod 777 [file_name]`                      | Assign read, write, and execute file permission to everyone (rwxrwxrwx)                                            |
-| `chmod 755 [file_name]`                      | Give read, write, and execute permission to owner, and read and execute permission to group and others (rwxr-xr-x) |
-| `chmod 766 [file_name]`                      | Assign full permission to the owner, and read and write permission to the group and others (rwxrw-rw-)             |
-| `chown [user_name] [file_name]`              | Change the ownership of a file                                                                                     |
-| `chown [user_name]:[group_name] [file_name]` | Change the owner and group ownership of a file                                                                     |
+| Command                                             | Description                                                                                                        |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `chmod [permission] [file_name]`                    | Provide file permission                                                                                            |
+| `chmod -R [permission] [filename]`                  | recursievly change file permission                                                                                 |
+| `chmod 777 [file_name]`                             | Assign read, write, and execute file permission to everyone (rwxrwxrwx)                                            |
+| `chmod 755 [file_name]`                             | Give read, write, and execute permission to owner, and read and execute permission to group and others (rwxr-xr-x) |
+| `chmod 766 [file_name]`                             | Assign full permission to the owner, and read and write permission to the group and others (rwxrw-rw-)             |
+| `chown [user_name] [file_name]`                     | Change the ownership of a file                                                                                     |
+| `chown [user_name]:[group_name] [file_name]`        | Change the owner and group ownership of a file                                                                     |
+| `chgrp [OPTION] [GROUP_NAME] [DIRECTORY/FILE_NAME]` | Change group of file/directory                                                                                     |
+| `sudo chgrp -R [GROUP_NAME] [DIRECTORY_NAME]`       | Recursievly change group of directory                                                                              |
+
+**_Network Commands_**
+
+| Command | Description |
+| ------- | ----------- |
