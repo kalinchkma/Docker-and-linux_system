@@ -198,11 +198,22 @@
 
 **_File Transfer Commands_**
 
-| Command                                                                       | Description                                                             |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `scp [user]@[remote_host]:[destination_path_remote] [destination_path_local]` | Copy a file to a server directory securely                              |
-| `rsync -a [source_directory] [user]@[remote_host]:[destination_directory]`    | Synchronize the contents of a directory with a backup directory         |
-| `wget [link]`                                                                 | Download files from FTP or web servers                                  |
-| `curl -O [link]`                                                              | Transfer data to or from a server with various protocols                |
-| `ftp [remote_host]`                                                           | Transfer files between local and remote systems interactively using FTP |
-| `sftp [user]@[remote_host]`                                                   | Securely transfer between local and remote hosts using SFTP             |
+| Command                                                                          | Description                                                             |
+| -------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `scp [user]@[remote_host]:[destination_path_remote] [destination_path_local]`    | Copy a file to a server directory securely                              |
+| `scp -r [user]@[remote_host]:[destination_path_remote] [destination_path_local]` | Copy a file recursively to a server directory securely                  |
+| `rsync -a [source_directory] [user]@[remote_host]:[destination_directory]`       | Synchronize the contents of a directory with a backup directory         |
+| `wget [link]`                                                                    | Download files from FTP or web servers                                  |
+| `curl -O [link]`                                                                 | Transfer data to or from a server with various protocols                |
+| `ftp [remote_host]`                                                              | Transfer files between local and remote systems interactively using FTP |
+| `sftp [user]@[remote_host]`                                                      | Securely transfer between local and remote hosts using SFTP             |
+
+**_User and Group Commands_**
+
+| Command              | Description                                       |
+| -------------------- | ------------------------------------------------- |
+| `id`                 | See details about the active users                |
+| `last`               | Show the last system logins                       |
+| `who`                | Display who is currently logged into the system   |
+| `w`                  | Show which users are logged in and their activity |
+| `finger [user_name]` | Show user information                             |
