@@ -49,6 +49,7 @@
 | `docker ps`                                                       | get running container                                     |
 | `docker ps -a`                                                    | get all running container                                 |
 | `docker stop 'container_name/id`                                  | get all running container/ we can use first 3 digit of id |
+| `docker start 'container_name/id` or `docker start -i 'id'`       | start stoped container                                    |
 | `docker container prune`                                          | remove all inactive container                             |
 
 #### Basic Linux system
@@ -88,10 +89,10 @@
 
 **_How to retrieve forgoted user password_**
 
-| Command               | Description                                                                                |
-| --------------------- | ------------------------------------------------------------------------------------------ |
-| `mount -o remount,rw` | to retrieve forgotten password, remount file system, this command execute on recovery mode |
-| `passwd username`     | change user password                                                                       |
+| Command                 | Description                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------ |
+| `mount -o remount,rw /` | to retrieve forgotten password, remount file system, this command execute on recovery mode |
+| `passwd username`       | change user password                                                                       |
 
 **_Simple user setting_**
 
@@ -117,3 +118,91 @@
 | `id user_username`                      | display all group members of user                       |
 | `id -nG username`                       | display user group member names                         |
 | `sudo usermod -aG group_name username`  | add user to new group without removing current group    |
+
+**_Hardware Information Commands_**
+
+| Command                           | Description                                                                                  |
+| --------------------------------- | -------------------------------------------------------------------------------------------- |
+| `lscpu`                           | CPU information                                                                              |
+| `lsblk`                           | Information about block devices                                                              |
+| `lspci -tv`                       | show PCI devices like graphics card, netword card etc                                        |
+| `lsusb -tv`                       | display use devices                                                                          |
+| `lshw`                            | list hardware configuration information                                                      |
+| `cat /proc/cpuinfo`               | show details CPU information                                                                 |
+| `cat /proc/meminfo`               | View detailed system memory information                                                      |
+| `cat /proc/mounts`                | See mounted file systems                                                                     |
+| `free -h`                         | Display free and used memory                                                                 |
+| `sudo dmidecode`                  | Show hardware information from the BIOS                                                      |
+| `hdparm -i /dev/[device_name]`    | Display disk data information                                                                |
+| `hdparm -tT /dev/[device_name]`   | Conduct a read speed test on the device/disk                                                 |
+| `badblocks -s /dev/[device_name]` | Test for unreadable blocks on the device/disk                                                |
+| `fsck /dev/[device_name]`         | Run a disk check on an unmounted disk or partition [! this command might damage file system] |
+
+**_Searching Commands_**
+
+| Command                                         | Description                                                                         |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `find [path] -name [search_pattern]`            | Find files and directories that match the specified pattern in a specified location |
+| `find [path] -size [+100M]`                     | See files and directories larger than a specified size in a directory               |
+| `grep [search_pattern] [file_name]`             | Search for a specific pattern in a file with grep                                   |
+| `grep -r [search_pattern] [directory_name]`     | Recursively search for a pattern in a directory                                     |
+| `locate [name]`                                 | Locate all files and directories related to a particular name                       |
+| `which [command]`                               | Search the command path in the $PATH environment variable                           |
+| `whereis [command]`                             | Use the whereis command to find the source, binary, and manual page for a command   |
+| `awk '[search_pattern] {print $0}' [file_name]` | Print all lines matching a pattern in a file                                        |
+| `sed 's/[old_text]/[new_text]/' [file_name]`    | Find and replace text in a specified file                                           |
+
+**_File commands_**
+
+| Command                                            | Description                                                   |
+| -------------------------------------------------- | ------------------------------------------------------------- |
+| `mkdir [directory_name]`                           | Create a new directory                                        |
+| `rm [file_name]`                                   | Remove file                                                   |
+| `rm -r [directory_name]`                           | Remove a directory recursively                                |
+| `rm -rf [directory_name]`                          | Recursively remove a directory without requiring confirmation |
+| `cp [source_file] [destination_file]`              | Copy the contents of one file to another file                 |
+| `cp -r [source_directory] [destination_directory]` | Recursively copy a directory to a second directory            |
+| `mv [source_file] [destination_file]`              | Move or rename files or directories.                          |
+| `touch [file_name]`                                | Create a new file using touch                                 |
+| `cat [file_name]`                                  | Show the contents of a file                                   |
+| `cat [source_file] >> [destination_file]`          | Append file contents to another file                          |
+| `head [file_name]`                                 | Show the first ten lines of a file                            |
+| `tail [file_name]`                                 | Show the last ten lines of a file                             |
+| `more [file_name]`                                 | Display contents of a file page by page                       |
+| `less [file_name]`                                 | Show the contents of a file with navigation                   |
+| `nano [file_name]`                                 | Open or create a file using the nano text editor              |
+| `gpg -c [file_name]`                               | Encrypt a file                                                |
+| `gpg [file_name].gpg`                              | Decrypt an encrypted .gpg file                                |
+| `wc -w [file_name]`                                | Show the number of words, lines, and bytes in a file          |
+
+**_Directory Navigation_**
+
+| Command               | Description                                             |
+| --------------------- | ------------------------------------------------------- |
+| `ls`                  | List files and directories in the current directory     |
+| `ls -a`               | List all files and directories in the current directory |
+| `ls -l`               | List files and directories in long format               |
+| `pwd`                 | Show the directory you are currently working in         |
+| `cd [directory_path]` | Change directory                                        |
+| `dirs`                | Show current directory stack                            |
+
+**_File Compression commands_**
+
+| Command                                        | Description                           |
+| ---------------------------------------------- | ------------------------------------- |
+| `tar cf [archive.tar] [file/directory]`        | Archive an existing file or directory |
+| `tar xf [archive.tar]`                         | Extract an archived file              |
+| `tar czf [archive.tar.gz] [files.......]`      | Create a .gz compressed tar archive   |
+| `gzip [file_name]`, `gunzip [file_name.gz]`    | Compress or decompress .gz files      |
+| `bzip2 [file_name]`, `bunzip2 [file_name.bz2]` | Compress or decompress .bz2 files     |
+
+**_File Transfer Commands_**
+
+| Command                                                                       | Description                                                             |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `scp [user]@[remote_host]:[destination_path_remote] [destination_path_local]` | Copy a file to a server directory securely                              |
+| `rsync -a [source_directory] [user]@[remote_host]:[destination_directory]`    | Synchronize the contents of a directory with a backup directory         |
+| `wget [link]`                                                                 | Download files from FTP or web servers                                  |
+| `curl -O [link]`                                                              | Transfer data to or from a server with various protocols                |
+| `ftp [remote_host]`                                                           | Transfer files between local and remote systems interactively using FTP |
+| `sftp [user]@[remote_host]`                                                   | Securely transfer between local and remote hosts using SFTP             |
