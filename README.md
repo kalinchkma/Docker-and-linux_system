@@ -391,3 +391,20 @@ Universal Linux Packages
 | `host [domain_name]`          | Perform an IP lookup for a domain              |
 | `hostname -I`                 | Show the local IP address                      |
 | `nslookup [domain_name]`      | Receive information about an internet domain   |
+
+**_Variable & Shell Commands_**
+
+| Command                                    | Description                                                                                         |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| `let "[variable_name]=[value]"`            | Assign an integer value to a variable                                                               |
+| `export [variable_name]`                   | Export a bash variable                                                                              |
+| `declare [variable_name]="[value]"`        | Declare a bash variable                                                                             |
+| `set`                                      | List the names of all the shell variables and functions                                             |
+| `unset [variable_name]`                    | Remove an environment variable                                                                      |
+| `echo $[variable-name]`                    | Display the value of a variable                                                                     |
+| `alias [alias-name]='[command]'`           | Create an alias for a command                                                                       |
+| `watch -n [interval-in-seconds] [command]` | Set a custom interval to run a user-defined command                                                 |
+| `sleep [time-interval] && [command]`       | Postpone the execution of a command                                                                 |
+| `at [hh:mm]`                               | Create a job to be executed at a certain time (Ctrl+D to exit prompt after you type in the command) |
+| `man [command]`                            | Display a built-in manual for a command                                                             |
+| `history`                                  | Print the command history used in the terminal                                                      |
