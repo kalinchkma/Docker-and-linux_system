@@ -51,6 +51,7 @@
 | `docker stop 'container_name/id`                                  | get all running container/ we can use first 3 digit of id |
 | `docker start 'container_name/id` or `docker start -i 'id'`       | start stoped container                                    |
 | `docker container prune`                                          | remove all inactive container                             |
+| `docker run -p container_post:host_post image_name`               | Port mapping to host                                      |
 
 #### Basic Linux system
 
