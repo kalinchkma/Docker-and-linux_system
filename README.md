@@ -31,27 +31,33 @@
  In linux by default we have add `sudo` on every command
 ```
 
-| Command                                                           | Description                                               |
-| ----------------------------------------------------------------- | --------------------------------------------------------- |
-| `docker build -t 'name' 'source-path'`                            | Build an docker image                                     |
-| `docker image ls` or `docker images`                              | See the all docker images that have beencreated           |
-| `docker image ls -q`                                              | It will return only image id                              |
-| `docker image rm 'image_id'`                                      | Remove the docker image id                                |
-| `docker image rm -f 'image_id'` or `docker image rm 'id' --force` | Remove the docker image id                                |
-| `docker image rm $(docker image ls -q)`                           | Remove all the images                                     |
-| `docker container rm -f $(docker container ls -aq)`               | Remove all the container                                  |
-| `docker run 'image_name'`                                         | Run the docker image                                      |
-| `docker run -it 'image name'`                                     | Run image and create docker container interactive mode    |
-| `docker ps` or `docker ps -a`                                     | See the running container                                 |
-| `docker pull 'image name'`                                        | Pull the image from sources                               |
-| `docker run ubuntu` or `docker pull ubuntu`                       | To create ubuntu image                                    |
-| `docker run -p cointainer_port:host_port image_name`              | map port                                                  |
-| `docker ps`                                                       | get running container                                     |
-| `docker ps -a`                                                    | get all running container                                 |
-| `docker stop 'container_name/id`                                  | get all running container/ we can use first 3 digit of id |
-| `docker start 'container_name/id` or `docker start -i 'id'`       | start stoped container                                    |
-| `docker container prune`                                          | remove all inactive container                             |
-| `docker run -p container_post:host_post image_name`               | Port mapping to host                                      |
+| Command                                                                         | Description                                               |
+| ------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| `docker build -t 'name' 'source-path'`                                          | Build an docker image                                     |
+| `docker image ls` or `docker images`                                            | See the all docker images that have beencreated           |
+| `docker image ls -q`                                                            | It will return only image id                              |
+| `docker image rm 'image_id'`                                                    | Remove the docker image id                                |
+| `docker image rm -f 'image_id'` or `docker image rm 'id' --force`               | Remove the docker image id                                |
+| `docker image rm $(docker image ls -q)`                                         | Remove all the images                                     |
+| `docker container rm -f $(docker container ls -aq)` or `docker container prune` | Remove all the container                                  |
+| `docker run 'image_name'`                                                       | Run the docker image                                      |
+| `docker run -it 'image name'`                                                   | Run image and create docker container interactive mode    |
+| `docker ps` or `docker ps -a`                                                   | See the running container                                 |
+| `docker pull 'image name'`                                                      | Pull the image from sources                               |
+| `docker run ubuntu` or `docker pull ubuntu`                                     | To create ubuntu image                                    |
+| `docker run -p cointainer_port:host_port image_name`                            | map port                                                  |
+| `docker ps`                                                                     | get running container                                     |
+| `docker ps -a`                                                                  | get all running container                                 |
+| `docker stop 'container_name/id`                                                | get all running container/ we can use first 3 digit of id |
+| `docker start 'container_name/id` or `docker start -i 'id'`                     | start stoped container                                    |
+| `docker container prune`                                                        | remove all inactive container                             |
+| `docker run -p container_port:host_port image_name`                             | Port mapping to host                                      |
+
+#### Live code with docker
+
+`docker run -p container_port:host_port -v "$(pwd):/container_directory_name image_name`
+This command will mount current working directory to container running app
+directory
 
 #### Basic Linux system
 
