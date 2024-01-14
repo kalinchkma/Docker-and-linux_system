@@ -60,9 +60,18 @@
 
 #### Live code with docker
 
-`docker run -p container_port:host_port -v "$(pwd):/container_directory_name -v /container_directory_name/node_modules image_name`
+```bash
+docker run -p container_port:host_port -v "$(pwd):/container_directory_name -v /container_directory_name/node_modules image_name
+```
+
 This command will mount current working directory to container running app
 directory
 
 #### Publishing docker images
 
+```bash
+docker tag tag_name docker_username/name_of_image
+```
+```bash
+docker push docker_username/name_of_image
+```
